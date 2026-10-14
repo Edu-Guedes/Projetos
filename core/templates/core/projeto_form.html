@@ -29,11 +29,13 @@ Novo Projeto
         </p>
     {% endif %}
 
+
     <form method="post" class="form-card">
 
         {% csrf_token %}
 
         {{ form.as_p }}
+
 
         <div class="form-actions">
 
@@ -45,7 +47,6 @@ Novo Projeto
             </a>
 
             <button class="btn primary" type="submit">
-           
 
                 {% if projeto %}
                     Salvar alterações
