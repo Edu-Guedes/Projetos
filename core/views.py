@@ -80,13 +80,22 @@ def tarefa_lista(request):
 def tarefa_criar(request):
     if request.method == 'POST':
         form = TarefaForm(request.POST)
+
         if form.is_valid():
             form.save()
-            messages.success(request, 'Tarefa cadastrada com sucesso!')
+            messages.success(
+                request,
+                'Tarefa cadastrada com sucesso!'
+            )
             return redirect('core:tarefa_lista')
     else:
         form = TarefaForm()
-        return render(request, 'core/tarefa_form.html', {'form': form})
+
+    return render(
+        request,
+        'core/tarefa_form.html',
+        {'form': form}
+    )
 
 
 def tarefa_editar(request, pk):
