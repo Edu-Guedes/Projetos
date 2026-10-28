@@ -1,2 +1,11 @@
-/venv
-/db.sqlite3
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambiente virtual
+venv/
+.venv/
+
+# Django
+db.sqlite3
