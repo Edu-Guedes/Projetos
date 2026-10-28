@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Excluir Tarefa | SprintTasks
+{% endblock %}
+
+{% block content %}
+
+<div class="form-page">
+
+    <p class="eyebrow">EXCLUSÃO</p>
+
+    <h1>Excluir tarefa</h1>
+
+    <p>
+        Tem certeza que deseja excluir a tarefa
+        <strong>{{ tarefa.titulo }}</strong>?
+    </p>
+
+    <p>Essa ação não poderá ser desfeita.</p>
+
+    <form method="post" class="form-card">
+        {% csrf_token %}
+
+        <div class="form-actions">
+
+            <a
+                class="btn secondary"
+                href="{% url 'core:tarefa_lista' %}"
+            >
+                Cancelar
+            </a>
+
+            <button
+                type="submit"
+                class="btn danger"
+            >
+                Confirmar exclusão
+            </button>
+
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}
