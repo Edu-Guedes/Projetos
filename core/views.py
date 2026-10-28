@@ -22,6 +22,9 @@ def projeto_criar(request):
 
         if form.is_valid():
             form.save()
+            messages.success(
+                request,
+                'Projeto cadastrado com sucesso!')
             return redirect('core:projeto_lista')
     else:
         form = ProjetoForm()
